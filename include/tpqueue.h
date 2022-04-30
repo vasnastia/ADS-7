@@ -4,7 +4,7 @@
 
 template<typename T>
 class TPQueue {
-  private:
+   private:
     struct OBJECT {
         T data;
         OBJECT *next, *prev;
@@ -17,7 +17,8 @@ class TPQueue {
         return obj;
     }
     OBJECT *head, *tail;
-  public:
+  
+   public:
     T pop() { //извлечение из очереди
         if (head) {
             OBJECT* cur = head->next;
@@ -27,7 +28,7 @@ class TPQueue {
             delete head;
             head = cur;
             return data;
-        }else {
+        } else {
             throw std::string("empty!!!");
         }
     }
@@ -38,13 +39,11 @@ class TPQueue {
             cur = cur->next;
         if (!cur && !head) {//в пустой список
             head = tail = obj;
-        }
-        else if (!cur->prev) { //в начало
+        } else if (!cur->prev) { //в начало
             cur->prev = obj;
             obj->next = cur;
             head = obj;
-        }
-        else if (!cur && head) { //в конец
+        } else if (!cur && head) { //в конец
             tail->next = obj;
             tail->next->prev = tail;
             tail = obj;
