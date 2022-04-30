@@ -42,17 +42,17 @@ class TPQueue {
         OBJECT* obj = create(data);
         while (cur && cur->data.prior >= data.prior)
             cur = cur->next;
-        if (!cur && !head) {//в пустой список
-            head = tail = obj;
-        } else if (!cur->prev) { //в начало
-            cur->prev = obj;
-            obj->next = cur;
-            head = obj;
-        } else if (!cur && head) { //в конец
+     if (!cur && head) { //в конец
             tail->next = obj;
             tail->next->prev = tail;
             tail = obj;
-        } else { //в середину
+     } else if (!cur && !head) {//в пустой список
+            head = tail = obj;
+     } else if (!cur->prev) { //в начало
+            cur->prev = obj;
+            obj->next = cur;
+            head = obj;
+     } else { //в середину
             cur->prev->next = obj;
             obj->prev = cur->prev;
             obj->next = cur;
