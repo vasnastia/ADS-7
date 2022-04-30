@@ -22,7 +22,7 @@ class TPQueue {
     }
     OBJECT *head;
     OBJECT *tail;
- 
+
  public:
     T pop() { //извлечение из очереди
         if (head) {
