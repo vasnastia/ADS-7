@@ -2,9 +2,12 @@
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
 
+#include <iostream>
+#include <string>
+
 template<typename T>
 class TPQueue {
-   private:
+ private:
     struct OBJECT {
         T data;
         OBJECT *next, *prev;
@@ -18,7 +21,7 @@ class TPQueue {
     }
     OBJECT *head, *tail;
   
-   public:
+ public:
     T pop() { //извлечение из очереди
         if (head) {
             OBJECT* cur = head->next;
