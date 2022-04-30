@@ -10,7 +10,8 @@ class TPQueue {
  private:
     struct OBJECT {
         T data;
-        OBJECT *next, *prev;
+        OBJECT *next;
+        OBJECT *prev;
     };
     TPQueue::OBJECT* create(const T& data) {
         OBJECT* obj = new OBJECT;
@@ -19,8 +20,9 @@ class TPQueue {
         obj->prev = nullptr;
         return obj;
     }
-    OBJECT *head, *tail;
-  
+    OBJECT *head;
+    OBJECT *tail;
+ 
  public:
     T pop() { //извлечение из очереди
         if (head) {
